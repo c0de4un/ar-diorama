@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  ar_diorama_api:
+    ports:
+      - "80:80"
+    build: ./app
+    volumes:
+      - ./app/html:/var/www/html
+  ar_diorama_db:
+    image: mysql
+    volumes:
+      - ./db/data:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=on
+  ar_diorama_phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 85:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
