@@ -355,3 +355,5 @@ MigrationBackup/
 /app/html/.gitattributes
 /app/html/.editorconfig
 /app/html/vendor/
+/app/html/resources/react/package-lock.json
+/app/html/resources/react/node_modules

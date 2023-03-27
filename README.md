@@ -45,5 +45,20 @@ Web-based AR-application for creating diorama using QR-code. Supports Shop-logic
 ```
 
 ### Frontend
+1. Install JavaScript packages
+```sh
+    $cd html/app/resources/react
+    $npm install
+```
+2. Build distribution frontend version
+```sh
+    $npm run prod
+```
+
+## User GUIDE
 
 ## Contribution
+
+## Authors
+x3n0g3aR
+c0de4un
