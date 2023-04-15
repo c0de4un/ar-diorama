@@ -358,3 +358,4 @@ MigrationBackup/
 /app/html/resources/react/package-lock.json
 /app/html/resources/react/node_modules
 /composer.phar
+/vendor
