@@ -359,3 +359,4 @@ MigrationBackup/
 /app/html/resources/react/node_modules
 /composer.phar
 /vendor
+/.idea
