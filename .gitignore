@@ -361,3 +361,13 @@ MigrationBackup/
 /vendor
 /.idea
 /package-lock.json
+/resources/ts/clients/*.js
+/resources/ts/components/*.js
+/resources/ts/components/cards/*.js
+/resources/ts/components/layouts/*.js
+/resources/ts/components/tabs/*.js
+/resources/ts/configs/*.js
+/resources/ts/controllers/api/*.js
+/resources/ts/models/*.js
+/resources/ts/store/*.js
+/public/hot
