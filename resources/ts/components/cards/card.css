@@ -1,0 +1,32 @@
+.card.sm {
+  min-width: 240px;
+  min-height: 96px;
+}
+
+.card.md {
+  min-width: 480px;
+  min-height: 96px;
+}
+
+.card.lg {
+  min-width: 640px;
+  min-height: 96px;
+}
+
+.card-header {
+  border-bottom-width: 1px;
+  min-height: 48px;
+}
+
+.card-body {
+  min-height: 48px;
+}
+
+.card-footer {
+  border-top-width: 1px;
+  min-height: 48px;
+}
+
+.card hr {
+  width: 100%;
+}
