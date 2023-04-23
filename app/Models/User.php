@@ -19,6 +19,7 @@ use Laravel\Sanctum\PersonalAccessToken;
  * @property int                       balance
  * @property string                    created_at
  * @property string                    updated_at
+ * @property string                    role
  * @property-read Collection<int, PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
  * @method static UserFactory factory($count = null, $state = [])
@@ -31,6 +32,9 @@ final class User extends Authenticatable
 {
     use HasApiTokens;
 
+    const ROLE_ADMIN  = 'admin';
+    const ROLE_PLAYER = 'player';
+
     /**
      * The attributes that are mass assignable.
      *
@@ -40,6 +44,7 @@ final class User extends Authenticatable
         'login',
         'password',
         'balance',
+        'role',
     ];
 
     /**
