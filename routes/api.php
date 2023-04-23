@@ -6,6 +6,7 @@ use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\LogoutController;
 use App\Http\Controllers\API\Auth\RegisterController;
 use App\Http\Controllers\API\Auth\TokenController;
+use App\Http\Controllers\API\Shop\AddShopItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ Route::prefix('v1')->group(function () {
         Route::middleware('auth:sanctum')->group(function () {
             Route::post('/logout', [LogoutController::class, 'index']);
             Route::get('/token', [TokenController::class, 'index']);
+        });
+    });
+
+    Route::prefix('shop')->group(function () {
+        Route::middleware('admin')->group(function () {
+            Route::post('/add', [AddShopItemController::class, 'index']);
         });
     });
 });
