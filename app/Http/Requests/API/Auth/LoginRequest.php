@@ -6,13 +6,13 @@ use App\Http\Requests\API\ApiRequest;
 use Illuminate\Contracts\Validation\Rule;
 
 /**
- * Class ApiLoginRequest
+ * Class LoginRequest
  * @package App\Http\Requests\Api\Auth
  * @property string                    login
  * @property string                    password
  * @inheritDoc ApiRequest
  */
-final class ApiLoginRequest extends  ApiRequest
+final class LoginRequest extends  ApiRequest
 {
     /**
      * Get the validation rules that apply to the request.

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API\Auth;
 
 use Illuminate\Http\JsonResponse;
 
-use App\Http\Requests\API\Auth\ApiLoginRequest;
+use App\Http\Requests\API\Auth\LoginRequest;
 
 /**
  * Class LoginController
@@ -13,10 +13,10 @@ use App\Http\Requests\API\Auth\ApiLoginRequest;
 final class LoginController extends AuthController
 {
     /**
-     * @param  ApiLoginRequest $request
+     * @param  LoginRequest $request
      * @return JsonResponse
      */
-    public function index(ApiLoginRequest $request): JsonResponse
+    public function index(LoginRequest $request): JsonResponse
     {
         return response()->json([
         ]);
