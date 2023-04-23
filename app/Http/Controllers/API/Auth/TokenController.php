@@ -5,6 +5,9 @@ namespace App\Http\Controllers\API\Auth;
 
 use Illuminate\Http\JsonResponse;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+
 /**
  * Class TokenController
  * @inheritDoc AuthController
@@ -12,13 +15,16 @@ use Illuminate\Http\JsonResponse;
 final class TokenController extends AuthController
 {
     /**
+     * @param  Request $request
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        // @TODO: TokenController::index()
+        /** @var User $user */
+        $user = $request->user();
+
         return response()->json([
-            'token' => '',
+            'token' => $user->createToken('token')->plainTextToken,
         ]);
     }
 }
