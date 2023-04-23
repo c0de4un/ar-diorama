@@ -6,11 +6,7 @@ use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\DatabaseNotification;
-use Illuminate\Notifications\DatabaseNotificationCollection;
-use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\PersonalAccessToken;
 
@@ -18,8 +14,11 @@ use Laravel\Sanctum\PersonalAccessToken;
  * Class User
  * @package App\Models
  *
- * @property-read DatabaseNotificationCollection<int, DatabaseNotification> $notifications
- * @property-read int|null $notifications_count
+ * @property string                    login
+ * @property string                    password
+ * @property int                       balance
+ * @property string                    created_at
+ * @property string                    updated_at
  * @property-read Collection<int, PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
  * @method static UserFactory factory($count = null, $state = [])
@@ -31,8 +30,6 @@ use Laravel\Sanctum\PersonalAccessToken;
 final class User extends Authenticatable
 {
     use HasApiTokens;
-    use HasFactory;
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -40,9 +37,9 @@ final class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
+        'login',
         'password',
+        'balance',
     ];
 
     /**
@@ -52,7 +49,6 @@ final class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
     ];
 
     /**
@@ -61,6 +57,5 @@ final class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
     ];
 }
