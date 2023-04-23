@@ -371,3 +371,5 @@ MigrationBackup/
 /resources/ts/models/*.js
 /resources/ts/store/*.js
 /public/hot
+/.env
+/composer.lock
