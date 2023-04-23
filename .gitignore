@@ -373,3 +373,5 @@ MigrationBackup/
 /public/hot
 /.env
 /composer.lock
+/_ide_helper.php
+/.phpstorm.meta.php
