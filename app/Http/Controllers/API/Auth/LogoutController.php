@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\API\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+
+use App\Models\User;
 
 /**
  * Class LogoutController
@@ -11,12 +15,21 @@ use Illuminate\Http\JsonResponse;
 final class LogoutController extends AuthController
 {
     /**
+     * @param  Request $request
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        // @TODO: LogoutController::index()
-        return response()->json([
-        ], 204);
+        /** @var User|null $user */
+        $user = $request->user();
+        if ($user) {
+            Auth::logout();
+
+            $session = $request->session();
+            $session->invalidate();
+            $session->regenerateToken();
+        }
+
+        return response()->json([]);
     }
 }
